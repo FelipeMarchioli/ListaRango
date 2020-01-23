@@ -1,0 +1,29 @@
+{
+  "name": "GoomerListaRango",
+  "version": "1.0.0",
+  "description": "API RESTful capaz de gerenciar os restaurantes e os produtos do seu cardápio.",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon server",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FelipeMarchioli/GoomerListaRango.git"
+  },
+  "keywords": [],
+  "author": "Felipe Marchioli",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FelipeMarchioli/GoomerListaRango/issues"
+  },
+  "homepage": "https://github.com/FelipeMarchioli/GoomerListaRango#readme",
+  "dependencies": {
+    "azure-storage": "^2.10.3",
+    "body-parser": "^1.19.0",
+    "config": "^3.2.3",
+    "express": "^4.17.1",
+    "guid": "0.0.12",
+    "mysql": "^2.18.0"
+  }
+}
