@@ -1,11 +1,16 @@
-const azure = require('azure-storage');
-const guid = require('guid');
+//Importando model a ser utilizada
+const Restaurante = require('../model/restaurante');
 
-module.exports = () => {
-    const listarRestausrantesDB = require('../data/teste.json');
-    const controller = {};
-  
-    controller.listarRestausrantes = (req, res) => res.status(200).json(listarRestausrantesDB);
-  
-    return controller;
-  }
+module.exports = {
+    async listarRestaurante(req, res, next) {
+        try {
+            const cnpj = req.params.cnpj;
+
+            let restaurante  = await Restaurante.findOne({'cnpj': cnpj});
+        
+            return res.json(restaurante);
+        } catch (err) {
+            next(err);
+        }
+    },
+}

@@ -2,7 +2,7 @@
   "name": "GoomerListaRango",
   "version": "1.0.0",
   "description": "API RESTful capaz de gerenciar os restaurantes e os produtos do seu cardápio.",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "start": "nodemon server",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -24,6 +24,6 @@
     "config": "^3.2.3",
     "express": "^4.17.1",
     "guid": "0.0.12",
-    "mysql": "^2.18.0"
+    "mongoose": "^5.8.9"
   }
 }
