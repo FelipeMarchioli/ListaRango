@@ -8,8 +8,8 @@ const RestauranteSchema = new mongoose.Schema({
     horarioFuncionamento: [
         {
             diaSemana: String,
-            horarioAberto: Date,
-            horarioFechado: Date
+            horarioAberto: String,
+            horarioFechado: String
         }
     ]
 });

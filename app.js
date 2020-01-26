@@ -1,5 +1,5 @@
 //Importando frameworks/pacotes internos
-const  express = require('express');
+const express = require('express');
 const bodyParser = require('body-parser');
 
 class AppController {
