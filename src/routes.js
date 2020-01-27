@@ -7,4 +7,6 @@ const routes = express.Router();
 
 routes.get('/api/v1/restaurante/listar/:cnpj', Restaurante.listarRestaurante);
 
+routes.get('/api/v1/restaurante/listarTodos', Restaurante.listarTodosRestaurante);
+
 module.exports = routes; 
