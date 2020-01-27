@@ -7,7 +7,7 @@ const routes = express.Router();
 
 routes.get('/api/v1/restaurante/listar/:cnpj', Restaurante.listarRestaurante);
 
-routes.get('/api/v1/produto/listar/:cnpj', Produto.listarProduto);
+routes.get('/api/v1/produto/listar/:id', Produto.listarProduto);
 
 routes.get('/api/v1/produto/listarTodos', Produto.listarTodosProduto);
 

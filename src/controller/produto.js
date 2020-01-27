@@ -86,7 +86,7 @@ module.exports = {
 
             dados.updated = new Date();
             
-            let produto  = await Produto.findOneAndUpdate({'cnpj': dados.cnpj}, dados, {
+            let produto  = await Produto.findOneAndUpdate({'id': dados.id}, dados, {
                 new: true,
                 upsert: true
             });
