@@ -1,0 +1,14 @@
+{
+    "server": {
+      "port" : 8080
+    },
+    "db": {
+      "name": "ProjetoGoomer",
+      "host": "127.0.0.1",
+      "user": "root",
+      "password": "6100745@"
+    },
+    "azure": {
+      "containerConectionString": "DefaultEndpointsProtocol=https;AccountName=nodestoreteste;AccountKey=B4vmd/AEP+B1hxQ1HqBpby4Tj1RlTDINZ0M6Z8CcqCDJaxqYMGH4zDHzDjy41YfmFU8/57eD45kL1xhdbt8p3A==;EndpointSuffix=core.windows.net"
+    } 
+}

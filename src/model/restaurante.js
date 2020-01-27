@@ -1,6 +1,8 @@
 const mongoose = require('mongoose');
 
 const RestauranteSchema = new mongoose.Schema({
+    created: Date,
+    updated: Date,
     cnpj: String,
     fotoRestaurante: String,
     nome: String,
