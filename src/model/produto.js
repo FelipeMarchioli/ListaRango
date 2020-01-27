@@ -8,7 +8,7 @@ const ProdutoSchema = new mongoose.Schema({
     promocao: {
         descricao: String,
         precoPromocao: Number,
-        horarioFuncionamento: [
+        horarioPromocao: [
             {
                 diaSemana: String,
                 horarioAberto: String,
