@@ -61,6 +61,16 @@ module.exports = {
   
             //Realizando comunicação com BD
             let restaurante  = await Restaurante.create(dados);
+
+            return res.json(restaurante);
+        } catch (err) {
+            next(err);
+        }
+    },
+    async listarTodosRestaurante(req, res, next) {
+        try {
+
+            let restaurante  = await Restaurante.find();
         
             return res.json(restaurante);
         } catch (err) {
