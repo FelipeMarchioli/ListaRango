@@ -10,7 +10,17 @@ module.exports = {
         try {
             const id = req.params.id;
 
-            let produto  = await Produto.findOne({'id': id});
+            let produto  = await Produto.findOne({'_id': id});
+        
+            return res.json(produto);
+        } catch (err) {
+            next(err);
+        }
+    },
+    async listarTodosProduto(req, res, next) {
+        try {
+
+            let produto  = await Produto.find();
         
             return res.json(produto);
         } catch (err) {
@@ -71,6 +81,27 @@ module.exports = {
         try {
             const dados = req.body;
 
+            //Upload imagem Azure
+            //Cria o blob service
+            const blobSrv = azure.createBlobService(config.azureConnectionString);
+
+            let filename = guid.raw().toString() + '.jpg';
+            let rawData = req.body.fotoProduto;
+            let matches = rawData.match(/^data:([A-Za-z-+\/]+);base64,(.+)$/);
+            let type = matches[1];
+            let buffer = new Buffer(matches[2], 'base64');
+
+            //Salvando a imagem no azure
+            await blobSrv.createBlockBlobFromText('product-images', filename, buffer, {
+                contentType: type
+            }, function (err, result, response) {
+                if (err) {
+                    filename = 'default-product.png';
+                }
+            });
+
+            dados.fotoProduto = 'https://nodestoreteste.blob.core.windows.net/product-images/' + filename;
+
             dados.promocao.horarioPromocao.forEach(item => {
                 
                 let data = Utils.validaHorario(item.horarioAberto, item.horarioFechado)
@@ -100,7 +131,7 @@ module.exports = {
         try {
             const dados = req.body;
 
-            let produto  = await Produto.deleteOne({'id': dados.id});
+            let produto  = await Produto.deleteOne({'_id': dados.id});
         
             return res.json(produto);
         } catch (err) {

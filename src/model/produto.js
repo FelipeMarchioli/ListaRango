@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 
 const ProdutoSchema = new mongoose.Schema({
+    id: mongoose.Schema.Types.ObjectId,
     created: Date,
     updated: Date,
     fotoProduto: String,
