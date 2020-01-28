@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 
 const ProdutoSchema = new mongoose.Schema({
+    _id: mongoose.Schema.Types.ObjectId,
     created: Date,
     updated: Date,
     fotoProduto: String,
@@ -10,7 +11,7 @@ const ProdutoSchema = new mongoose.Schema({
     promocao: {
         descricao: String,
         precoPromocao: Number,
-        horarioFuncionamento: [
+        horarioPromocao: [
             {
                 diaSemana: String,
                 horarioAberto: String,
@@ -19,4 +20,5 @@ const ProdutoSchema = new mongoose.Schema({
         ]
     }
 });
+
 module.exports = mongoose.model('Produto', ProdutoSchema);
