@@ -11,7 +11,7 @@ const ProdutoSchema = new mongoose.Schema({
     promocao: {
         descricao: String,
         precoPromocao: Number,
-        horarioFuncionamento: [
+        horarioPromocao: [
             {
                 diaSemana: String,
                 horarioAberto: String,
@@ -20,4 +20,5 @@ const ProdutoSchema = new mongoose.Schema({
         ]
     }
 });
+
 module.exports = mongoose.model('Produto', ProdutoSchema);

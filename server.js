@@ -1,6 +1,8 @@
 const app = require('./app')
 const config = require('./config/config')
 const mongoose = require('mongoose');
+const config = require('./config/config');
+
 
 //Iniciando servidor
 app.listen(process.env.PORT || config.server.port, () => {
