@@ -31,8 +31,9 @@ application/json
 ``` http://localhost:3333/api/v1/restaurante/listar/85650128000155 ```
 
 #### Example Response
-<kdb> 200 - OK </kdb>
-``` {
+<kbd> 200 - OK </kbd>
+``` 
+{
     "_id": "5e30dde967a18d8ee4ea1eb2",
     "cnpj": "85650128000155",
     "nome": "Restaurante X",
@@ -69,8 +70,9 @@ application/json
 ``` http://localhost:3333/api/v1/restaurante/listarTodos ```
 
 #### Example Response
-<kdb> 200 - OK </kdb>
-```[
+<kbd> 200 - OK </kbd>
+```
+[
     {
         "_id": "5e30c840dfaa834be4b1abec",
         "cnpj": "27660128000138",
@@ -127,7 +129,8 @@ application/json
 ``` http://localhost:3333/api/v1/restaurante/cadastrar ```
 
 #### Body (JSON)
-```{
+```
+{
   "cnpj": "85650128000158",
   "nome": "Restaurante X",
   "endereco": "Rua restaurante, 15",
@@ -150,8 +153,9 @@ application/json
 > O campo fotoRestaurante deve ser uma imagem com o endereço em base 64.
 
 #### Example Response
-<kdb> 200 - OK </kdb>
-``` {
+<kbd> 200 - OK </kbd>
+``` 
+{
     "_id": "5e30dde967a18d8ee4ea1eb2",
     "cnpj": "85650128000155",
     "nome": "Restaurante X",
@@ -188,7 +192,8 @@ application/json
 ``` http://localhost:3333/api/v1/restaurante/atualizar ```
 
 #### Body (JSON)
-<kdb>{
+```
+{
   "cnpj": "85650128000158",
   "nome": "Restaurante X",
   "endereco": "Rua restaurante, 15",
@@ -205,13 +210,15 @@ application/json
     }
   ],
   "fotoRestaurante": "https://nodestoreteste.blob.core.windows.net/restaurant-images/28067a8c-fa2b-4417-2bdd-33fdb3f07f23.jpg"
-}</kdb>
+}
+```
 
 > A busca será feita pelo cnpj, esse dado será recebido pelo Body(JSON).
 
 #### Example Response
-``` 200 - OK ```
-<kdb> {
+<kbd> 200 - OK </kbd>
+```
+{
     "_id": "5e30dde967a18d8ee4ea1eb2",
     "cnpj": "85650128000155",
     "nome": "Restaurante X",
@@ -234,7 +241,8 @@ application/json
     "created": "2020-01-29T01:20:41.215Z",
     "updated": "2020-01-29T01:20:41.215Z",
     "__v": 0
-} </kdb>
+} 
+```
 
 #### **DELETE** Excluir restaurante
 <kbd>http://localhost:3333/api/v1/restaurante/excluir</kbd>
@@ -247,7 +255,8 @@ application/json
 ``` http://localhost:3333/api/v1/restaurante/excluir ```
 
 #### Body (JSON)
-<kdb>{
+```
+{
   "cnpj": "85650128000158",
   "nome": "Restaurante X",
   "endereco": "Rua restaurante, 15",
@@ -264,13 +273,15 @@ application/json
     }
   ],
   "fotoRestaurante": "https://nodestoreteste.blob.core.windows.net/restaurant-images/28067a8c-fa2b-4417-2bdd-33fdb3f07f23.jpg"
-}</kdb>
+}
+```
 
 > A busca será feita pelo cnpj, esse dado será recebido pelo Body(JSON).
 
 #### Example Response
-``` 200 - OK ```
-<kdb> {
+<kbd> 200 - OK </kbd>
+```
+{
     "n": 0,
     "opTime": {
         "ts": "6787194482652610569",
@@ -287,4 +298,5 @@ application/json
     },
     "operationTime": "6787194482652610569",
     "deletedCount": 1
-} </kdb>
+} 
+```
