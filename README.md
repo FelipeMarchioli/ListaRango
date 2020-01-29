@@ -4,6 +4,12 @@ API RESTful capaz de gerenciar os restaurantes e os produtos do seu cardápio.
 ## Introdução
 APIs criadas para realizar cadastro, consulta, atualização e exclusão de restaurantes e produtos.
 
+## Desafios
+Como não trabalho com documentação e testes, esses foram os pontos que mais me trouxeram dúvidas e aprendizado nesse pequeno período, pois tive a oportunidade de buscar conhecimento nesses pontos específicos e que faz diferença no momento do desenvolvimento e do testes das APIs.
+
+## Melhoria na aplicação
+Através de pesquisas, entendi que em diversos momentos, é útil a abordagem do TDD para o desenvolvimento de uma aplicação. Na parte de performance, o que traria um ganho a aplicação seria a utilização de um cluster.
+
 ## Endpoint
 O endpoint de conexão com as APIs é: ``` http://localhost:3333/api/v1 ```
 
