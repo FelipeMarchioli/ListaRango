@@ -5,6 +5,7 @@ const Produto = require('./controller/produto');
 
 const routes = express.Router();
 
+//Rotas restaurante
 routes.get('/api/v1/restaurante/listar/:cnpj', Restaurante.listarRestaurante);
 
 routes.get('/api/v1/restaurante/listarTodos', Restaurante.listarTodosRestaurante);
@@ -17,6 +18,7 @@ routes.delete('/api/v1/restaurante/excluir', Restaurante.excluirRestaurante);
 
 routes.get('/api/v1/restaurante/listar/:cnpj', Restaurante.listarRestaurante);
 
+//Rotas produto
 routes.get('/api/v1/produto/listar/:id', Produto.listarProduto);
 
 routes.get('/api/v1/produto/listarTodos', Produto.listarTodosProduto);

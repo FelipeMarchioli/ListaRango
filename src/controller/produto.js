@@ -9,6 +9,8 @@ const config = require('../../config/config');
 module.exports = {
     async listarProduto(req, res, next) {
         try {
+
+            //recebendo parâmetro da url para posterior pesquisa no banco
             const id = req.params.id;
 
             let produto  = await Produto.findOne({'_id': id});
@@ -64,7 +66,7 @@ module.exports = {
 
                 if (data.erro) {
                     
-                    return res.json('Horários de funcionamento deve ter um intervalo maior que 15 minutos.');
+                    return res.status(500).json('Horários de funcionamento deve ter um intervalo maior que 15 minutos.');
                 }
 
                 item.horarioAberto = data.horaAbrir;
@@ -81,10 +83,14 @@ module.exports = {
     },
     async atualizarProduto(req, res, next) {
         try {
+
+            //recebendo JSON da requisição para atualizar
             const dados = req.body;
 
+            //for para cada dia da promocao e posterior validação do horário
             dados.promocao.horarioPromocao.forEach(item => {
                 
+                //Chamando validação de horário
                 let data = Utils.validaHorario(item.horarioAberto, item.horarioFechado)
 
                 if (data.erro) {
@@ -96,8 +102,10 @@ module.exports = {
                 item.horarioFechado = data.horaFechar;
             });            
 
+            //atualizando data da atualização
             dados.updated = new Date();
             
+            //comunição com o banco para atualizar os dados segundo o parâmetro _id
             let produto  = await Produto.findOneAndUpdate({'_id': dados._id}, dados, {
                 new: true,
                 upsert: true
@@ -110,6 +118,8 @@ module.exports = {
     },
     async excluirProduto(req, res, next) {
         try {
+            
+            //recebendo JSON da requisição para exclusão
             const dados = req.body;
 
             let produto  = await Produto.deleteOne({'_id': dados.id});

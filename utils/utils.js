@@ -5,6 +5,7 @@ function validaHorario(horaAbrir, horaFechar) {
     let horaAberto = horaAbrir.split(":")[0];
     let horaFechado = horaFechar.split(":")[0];
 
+    //Início da verificação do horário
     if (parseInt(horaAberto) == parseInt(horaFechado)) {
         if (parseInt(minFechado) < parseInt(minAberto) + 15) {
 
