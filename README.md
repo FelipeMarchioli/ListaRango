@@ -16,9 +16,9 @@ Existem os seguintes recursos listados abaixo que estão disponíveis para manip
 Todos os dados enviados e recebidos pela API estão/deverão ser em formato JSON (application/json).
 
 ### Restaurante
-#### ** {c:green}GET{/c} ** Listar restaurantes
+#### {c:green}GET{/c} Listar restaurantes
 <kbd>http://localhost:3333/api/v1/restaurante/listar/:cnpj</kbd>
 
 | Parâmetro | Descrição                          |
 | --------- | ---------------------------------- | 
-| <mark>cnpj</mark> | Cnpj do restaurante a ser pesquisado |  
+| <mark>cnpj</mark> | Cnpj do restaurante a ser pesquisado | 
